@@ -2,7 +2,7 @@
 #
 # z3bra -- 2014-01-21
 
-test -z "$1" && exit
+test -z "$1" && echo "Usage: ./imshow.sh <file>"; exit
 
 W3MIMGDISPLAY="/usr/lib/w3m/w3mimgdisplay"
 FILENAME=$1
@@ -33,8 +33,6 @@ if [[ "$height" -gt "$max_height" ]]; then
     height=$max_height
 fi
 
-height=400
-width=400
 w3m_command="0;1;0;0;$width;$height;;;;;$FILENAME\n4;\n3;"
 
 tput cup $(($height/$FONTH)) 0
